@@ -20,7 +20,7 @@ public class MobileUser extends BaseEntity{
 	private String userName;
 	@Column(name = "password", nullable = false, length = 20)
 	private String password;
-	@Column(name = "password", nullable = false, length = 1)
+	@Column(name = "status", nullable = false, length = 1)
 	private String status;
 	
 	public String getUserName() {
