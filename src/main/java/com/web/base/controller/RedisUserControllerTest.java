@@ -64,4 +64,9 @@ public class RedisUserControllerTest {
 		condition.put("key", key);
 		return service.findByCondition(page, pageSize, condition);
 	}
+	
+	@RequestMapping("error")
+	public @ResponseBody String error(){
+		return "{\"result:error\",\"errorCode:-1\"}";
+	}
 }
