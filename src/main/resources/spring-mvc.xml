@@ -45,7 +45,7 @@
 	<!-- 拦截器 -->  
     <mvc:interceptors>  
         <mvc:interceptor>  
-           <mvc:mapping path="/r/*/*" /><!-- 如果不配置或/*,将拦截所有的Controller -->  
+           <mvc:mapping path="/*/*" /><!-- 如果不配置或/*,将拦截所有的Controller -->  
            <bean class="com.web.base.interceptor.TokenInterceptor"></bean>  
         </mvc:interceptor>  
     </mvc:interceptors>  

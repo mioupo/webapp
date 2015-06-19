@@ -4,13 +4,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.web.base.service.impl.AssistService;
 
 public class TokenInterceptor implements HandlerInterceptor {
 
 	 private Logger log = Logger.getLogger(this.getClass());
-	
+	 
+	 @Autowired
+	 private AssistService assistService;
+	 
 	 /** 
 	     * 在业务处理器处理请求之前被调用 
 	     * 如果返回false 
@@ -27,11 +33,14 @@ public class TokenInterceptor implements HandlerInterceptor {
 	public boolean preHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler) throws Exception {
 		log.debug("interceptor");
-		/*boolean is = false;
-		if(is)
+		boolean flag = false;
+		String token = request.getParameter("token");
+		if(null!=token&&!token.equals(""))
+			
+		if(flag)
 			response.sendRedirect(request.getContextPath()+"/redisUserTest/error");
 		else
-			is = true;*/
+			flag = true;
 		return true;
 	}
 	//在业务处理器处理请求执行完成后,生成视图之前执行的动作   
