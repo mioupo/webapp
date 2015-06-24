@@ -31,14 +31,14 @@ public class RedisTest extends TestBase{
 		for (int i = 0; i < 10000; i++) {
 			user.setId(String.valueOf(i));
 			user.setUserName("test"+i);
-			service.add(user, 3600);
+			//service.add(user, 3600);
 		}
 		long end = System.currentTimeMillis();
 		System.out.println("-------------insert 10000 data need "+(end-start)/1000+" second");
 	}
 	
 	public void testTimeOut() throws BusinessException{
-		RedisUser user = new RedisUser();
+		/*RedisUser user = new RedisUser();
 		user.setId("1");
 		RedisUser baseEntity = (RedisUser)service.get(user);
 		System.out.println("-----------------"+baseEntity.getUserName());
@@ -51,6 +51,6 @@ public class RedisTest extends TestBase{
 			System.out.println("-----------------"+baseEntity2.getUserName());
 		}else {
 			System.out.println("-------------------the cache is expired");
-		}
+		}*/
 	}
 }

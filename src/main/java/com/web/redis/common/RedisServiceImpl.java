@@ -22,7 +22,7 @@ public class RedisServiceImpl extends AbstractBaseRedisDao<String, BaseEntity>
 			ValueOperations<String, BaseEntity> operations = this.redisTemplate
 					.opsForValue();
 			// 设置过期时间
-			operations.set(CacheKey.getEntityInfoKey(obj.getId()), obj,
+			operations.set(CacheKey.getEntityInfoKey(obj.getId().toString()), obj,
 					timeout, TimeUnit.SECONDS);
 		}
 	}
@@ -63,7 +63,7 @@ public class RedisServiceImpl extends AbstractBaseRedisDao<String, BaseEntity>
 		ValueOperations<String, BaseEntity> operations = this.redisTemplate
 				.opsForValue();
 		BaseEntity baseEntity = operations.get(CacheKey.getEntityInfoKey(obj
-				.getId()));
+				.getId().toString()));
 		return baseEntity;
 	}
 

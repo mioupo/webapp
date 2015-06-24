@@ -2,15 +2,15 @@ package com.web.base.redis.entity;
 
 import java.io.Serializable;
 
-import com.web.base.entity.BaseEntity;
 
-public class RedisUser extends BaseEntity implements Serializable{
+public class RedisUser implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
+	private String id; 
 	
 	private String userName;
 	
@@ -18,6 +18,16 @@ public class RedisUser extends BaseEntity implements Serializable{
 	
 	private School school;
 	
+	public String getId() {
+		return id;
+	}
+
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+
 	public RedisUser() {
 		super();
 	}

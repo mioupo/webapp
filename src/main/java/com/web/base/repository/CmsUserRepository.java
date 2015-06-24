@@ -9,4 +9,5 @@ public interface CmsUserRepository extends
 		PagingAndSortingRepository<MobileUser, Integer>,
 		JpaSpecificationExecutor<MobileUser> {
 
+	public MobileUser findByUserName(String userName);
 }

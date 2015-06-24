@@ -17,7 +17,7 @@ public class BaseEntity {
 	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@GeneratedValue(generator = "system-uuid")
 	@Column(name = "id", length = 32)
-	private String id;
+	private Integer id;
 	@Column(name = "create_user")
 	private String createUser;
 	@Column(name = "create_time")
@@ -26,10 +26,10 @@ public class BaseEntity {
 	private String updateUser;
 	@Column(name = "update_time")
 	private Date updateTime;
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getCreateUser() {

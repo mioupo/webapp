@@ -16,13 +16,18 @@ public class CmsUserServiceImpl implements CmsUserService {
 	CmsUserRepository userRepository;
 	
 	@Override
-	public Page<MobileUser> findall(Pageable pageable) {
+	public Page<MobileUser> findAll(Pageable pageable) {
 		return userRepository.findAll(pageable);
 	}
 
 	@Override
 	public MobileUser getOne(Integer id) {
 		return userRepository.findOne(id);
+	}
+
+	@Override
+	public MobileUser findByUserName(String userName) {
+		return userRepository.findByUserName(userName);
 	}
 
 	

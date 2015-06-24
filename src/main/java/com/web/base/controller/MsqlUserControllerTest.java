@@ -33,7 +33,7 @@ public class MsqlUserControllerTest {
 			){
 		
 		Pageable pageable = WebUitl.buildPageRequest(nextPage, pageSize, sortDate);
-		return userService.findall(pageable);
+		return userService.findAll(pageable);
 	}
 	
 	@RequestMapping("get")
@@ -45,4 +45,12 @@ public class MsqlUserControllerTest {
 		return userService.getOne(id);
 	}
 	
+	@RequestMapping("getByUserName")
+	@ApiOperation(value = "根据用户名查找用户", httpMethod = "GET", response = MobileUser.class)
+	public @ResponseBody MobileUser getByUserName(
+			@ApiParam(value="用户名") @RequestParam String userName
+			){
+		
+		return userService.findByUserName(userName);
+	}
 }
